@@ -1,0 +1,52 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+  background-color: black;
+}
+
+.image-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.5s ease-in-out; /* Fade transition */
+}
+
+#next-image {
+  opacity: 0; /* Start hidden */
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  transition: opacity 0.5s ease-in-out; /* Fade transition for text */
+  width: 100%;
+}
+
+.hide-text {
+  opacity: 0;
+  visibility: hidden; /* Hide the element completely */
+}
+
+.show-text {
+  opacity: 1;
+  visibility: visible; /* Ensure the element is visible */
+}
