@@ -1,4 +1,5 @@
 var done = false;
+var clicked = false;
 
 const images = [
     'src/galaxy.jpg',
@@ -89,6 +90,12 @@ const texts = [
 let currentImageIndex = 0;
 
 function changeContentAndImage() {
+    if(!clicked) {
+        const audio = document.getElementById('background-audio');
+        audio.play();
+        clicked = true;
+    }
+
     const currentImageElement = document.getElementById('current-image');
     const nextImageElement = document.getElementById('next-image');
     const textElement = document.getElementById('text-overlay');
@@ -131,5 +138,6 @@ function changeContentAndImage() {
 // Attach the function to a click event
 document.addEventListener('DOMContentLoaded', () => {
     preloadImages();
+
     document.querySelector('.image-container').addEventListener('click', changeContentAndImage);
 });
