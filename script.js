@@ -17,6 +17,16 @@ const images = [
     'src/seven.jpg'
 ];
 
+const preloadedImages = [];
+
+function preloadImages() {
+    images.forEach((imageSrc, index) => {
+        const img = new Image();
+        img.src = imageSrc;
+        preloadedImages[index] = img;
+    });
+}
+
 const texts = [
     {
         content: `Mi se dugo znamo<br>Dobro poznajemo<br>Puno poštujemo<br>Neopisivo volimo`,
@@ -120,5 +130,6 @@ function changeContentAndImage() {
 
 // Attach the function to a click event
 document.addEventListener('DOMContentLoaded', () => {
+    preloadImages();
     document.querySelector('.image-container').addEventListener('click', changeContentAndImage);
 });
